@@ -48,6 +48,7 @@ def receive_connections():
         message = f"Chatbot: {username} joined the chat!".encode("utf-8")
         broadcast(message,client)
         client.send("Connected to server".encode("utf-8"))
+        print(usernames)
 
         thread = threading.Thread(target=handle_messages, args=(client,))
         thread.start()
